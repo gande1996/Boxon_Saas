@@ -109,3 +109,44 @@ public class TC_001ReadyToShip_COD {
 		driver.findElement(By.xpath("//*[@id=\"step3\"]/div/div/div/div[8]/div/div/input[1]")).click();
 		driver.findElement(By.xpath("//*[@id=\"step3\"]/div/div/div/div[14]/div/input[7]")).click();
 	}
+
+
+==========================================================================================================================================================================
+
+	Inhouse cod payment		
+
+		ChromeOptions co=new  ChromeOptions();
+		co.addArguments("--remote-allow-origins=*");
+		WebDriver driver = new ChromeDriver(co);
+		driver.manage().window().maximize();
+		driver.get("https://manage.smarteweb.com/");
+		driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtusername")).sendKeys("iblesoft");
+		driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtpassword")).sendKeys("Boxon@123");
+		driver.findElement(By.id("ctl00_ContentPlaceHolder1_btnlogin")).click();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+		driver.findElement(By.xpath("//*[@id=\"aspnetForm\"]/section/div[2]/div[1]/a")).click();
+		driver.findElement(By.xpath("//*[@id=\"ctl00_divMenu\"]/ul/li[3]/a/b")).click();
+		driver.findElement(By.xpath("//*[@id=\"inhousewaybill\"]/a")).click();
+		Thread.sleep(8000);
+		JavascriptExecutor js=(JavascriptExecutor) driver;
+			js.executeScript("window.scrollBy(0, 250)");
+//		driver.findElement(By.id("ctl00_ContentPlaceHolder1_gdvInhouse_DXFREditorcol3_I")).sendKeys("Iblec1189");
+		driver.findElement(By.partialLinkText("INH-10000746")).click();
+		Thread.sleep(5000);
+//		driver.findElement(By.xpath("//*[@id=\"ctl00_ContentPlaceHolder1_gdvInhouse_DXSelBtn0_D\"]")).click();
+//		JavascriptExecutor js=(JavascriptExecutor) driver;
+//		js.executeScript("window.scrollBy(0, 250)");
+//		driver.findElement(By.id("ctl00_ContentPlaceHolder1_gdvInhouse_DXSelBtn0_D")).click();
+//		Thread.sleep(5000);
+//		driver.findElement(By.id("ctl00_ContentPlaceHolder1_btnPickingList")).click();
+//		Thread.sleep(5000);
+//		driver.findElement(By.xpath("/html/body/form/section/div[2]/div[3]/div/div[2]/div/section[2]/div[1]/div[18]/div/div/div/div[4]/input[1]")).click();
+		driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtDeliveryDT")).click();
+		driver.findElement(By.id("CalendarExtender2_day_4_6")).click();
+		driver.findElement(By.xpath("//*[@id=\"InhouseBill\"]/li[6]/a/span[1]")).click();
+		driver.findElement(By.id("ctl00_ContentPlaceHolder1_txtSpotPrice")).sendKeys("20");
+		JavascriptExecutor js2=(JavascriptExecutor) driver;
+		js2.executeScript("window.scrollBy(0, 1250)");
+		Thread.sleep(3000);
+		driver.findElement(By.id("ctl00_ContentPlaceHolder1_btnSaveExit")).click();
+		
